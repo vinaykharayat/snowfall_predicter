@@ -1,0 +1,2 @@
+['maxtempC' 'FeelsLikeC' 'cloudcover' 'humidity' 'precipMM' 'visibility'
+ 'winddirDegree' 'windspeedKmph' 'nightHours' 'snowfall']
