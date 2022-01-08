@@ -1,11 +1,11 @@
-from flask import Flask
+from flask import Flask, render_template, jsonify
 import pandas as pd
 import pickle
 app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return Flask.render_template("index.html")
+    return render_template("index.html")
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -14,7 +14,7 @@ def predict():
     #  query = pd.get_dummies(query_df)
     
      loaded_model = pickle.load(open('Pickle/xgboost.pkl', 'rb'))
-     return Flask.jsonify({'prediction': 'success'})
+     return jsonify({'prediction': 'success'})
 
 if __name__ == "__main__":
     app.run(port=8080)
