@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+    return Flask.render_template("index.html")
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -14,7 +14,7 @@ def predict():
     #  query = pd.get_dummies(query_df)
     
      loaded_model = pickle.load(open('Pickle/xgboost.pkl', 'rb'))
-     return jsonify({'prediction': 'success'})
+     return Flask.jsonify({'prediction': 'success'})
 
 if __name__ == "__main__":
     app.run(port=8080)
