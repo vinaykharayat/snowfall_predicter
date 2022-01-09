@@ -15,9 +15,9 @@ def predict():
     #  json_ = request.json
     #  query_df = pd.DataFrame(json_)
     #  query = pd.get_dummies(query_df)
-    
-    loaded_model = pickle.load(open(picklePath, 'rb'))
     return jsonify({'prediction': 'success', 'rootPath': root})
+    
+    # loaded_model = pickle.load(open(picklePath, 'rb'))
 
 if __name__ == "__main__":
     app.run(port=8080)
