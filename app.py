@@ -13,9 +13,10 @@ def predict():
     #  json_ = request.json
     #  query_df = pd.DataFrame(json_)
     #  query = pd.get_dummies(query_df)
-    return jsonify({'prediction': 'success', 'rootPath': str(os.getcwd())})
     
-    # loaded_model = pickle.load(open(picklePath, 'rb'))
+    loaded_model = pickle.load(open(os.getcwd() + "/Pickle/xgboost.pkl", 'rb'))
+    return jsonify({'prediction': 'success'})
+
 
 if __name__ == "__main__":
     app.run(port=8080)
