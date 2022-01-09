@@ -15,7 +15,7 @@ def predict():
     #  json_ = request.json
     #  query_df = pd.DataFrame(json_)
     #  query = pd.get_dummies(query_df)
-    return jsonify({'prediction': 'success', 'rootPath': root})
+    return jsonify({'prediction': 'success', 'rootPath': str(root)})
     
     # loaded_model = pickle.load(open(picklePath, 'rb'))
 
