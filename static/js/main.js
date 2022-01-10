@@ -1,5 +1,5 @@
-let url = 'http://127.0.0.1:8080/predict';
-// let url = 'https://snowfallpredicter.azurewebsites.net/predict'
+// let url = 'http://127.0.0.1:8080/predict';
+let url = 'https://snowfallpredicter.azurewebsites.net/predict'
 
 let apiKey = "e43f7d5b3cc56c04e4ae9d3d593f7940";
 let openweatherUrl = "https://api.openweathermap.org/data/2.5/forecast?q=Pithoragarh&cnt=1&appid=" + apiKey;
