@@ -12,16 +12,6 @@
 
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-<script>
-    $.ajax({
-        type: 'POST',
-        dataType: "jsonp",
-        url: 'https://snowfallpredicter.azurewebsites.net/predict',
-        success: function(data, status, xhr) {
-            console.log('data: ', data);
-        }
-    });
-</script>
+<script src="{{url_for('static', filename='js/main.js')}}"></script>
 
 </html>
