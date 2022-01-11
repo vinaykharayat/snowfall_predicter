@@ -1,4 +1,4 @@
-// let url = 'http://127.0.0.1:8080/predict';
+// let url = 'http://127.0.0.1:5000/predict';
 let url = 'https://snowfallpredicter.azurewebsites.net/predict'
 
 let apiKey = "e43f7d5b3cc56c04e4ae9d3d593f7940";
@@ -10,6 +10,11 @@ $.ajax({
     url: openweatherUrl,
     success: function(data) {
         console.log(data);
+        let nextPredictionTime = document.getElementById("nextPredictionTime");
+
+        predictionTime = new Date(data.list[0].dt * 1000);
+        nextPredictionTime.innerText = predictionTime;
+
         let nightHours = (data.city.sunset - data.city.sunrise) / 3600;
 
         let rain = (data.list[0].rain !== undefined) ? data.list[0].rain["3h"] : 0;
@@ -41,13 +46,14 @@ function predict(postData) {
         url: url,
         contentType: "application/json; charset=utf-8",
         success: function(data) {
-            let prediction = undefined;
+
+
+            let prediction = document.getElementById("prediction");
             if (data.prediction === 0) {
-                prediction = "No snowfall";
+                prediction.innerText = "No snowfall";
             } else {
-                prediction = "Hurry! snowfall";
+                prediction.innerText = "Snowfall";
             }
-            alert(prediction);
         },
         error: function(xhr, status, error) {
             alert("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)

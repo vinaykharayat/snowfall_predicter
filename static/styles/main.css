@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.topnav h1 {
+    display: inline-block;
+}
+
+.glow-on-hover {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    float: right;
+    width: 120px;
+    height: 50px;
+    color: #fff;
+    background: #111;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    margin: 1vw;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+#babaji {
+    height: 27vw;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#prediction {
+    position: absolute;
+    top: 21.5vh;
+    padding-left: 49vw;
+    font-size: 1.2vw;
+    margin: auto;
+}
+
+#move-area {
+    /*normally use body*/
+    width: 10vw;
+    height: 10vw;
+    padding: 10vw 41.2vw;
+    position: absolute;
+    top: 6.3vh;
+    margin: auto;
+}
+
+#container {
+    width: 100vw;
+}
+
+.eye {
+    position: relative;
+    display: inline-block;
+    border-radius: 50%;
+    height: 1.8vw;
+    width: 1.8vw;
+    background: #CCC;
+}
+
+.eye:after {
+    /*pupil*/
+    position: absolute;
+    bottom: 1.1vw;
+    right: 0.8vw;
+    width: 0.8vw;
+    height: 0.8vw;
+    background: #000;
+    border-radius: 50%;
+    content: " ";
+}
+
+@media only screen and (max-width: 428px) {
+    #babaji {
+        height: 55vw;
+    }
+    .move-area {
+        /*normally use body*/
+        padding: 10vw 44vw;
+        top: 27vw;
+    }
+    .eye {
+        height: 2.8vw;
+        width: 2.8vw;
+    }
+    .eye:after {
+        /*pupil*/
+        bottom: 1.1vw;
+        right: 1.8vw;
+        width: 1.8vw;
+        height: 1.8vw;
+    }
+    #prediction {
+        top: 31vw;
+        padding-left: 58vw;
+        font-size: 2.2vw;
+    }
+}
+
+@media only screen and (max-width: 390px) {
+    .move-area {
+        padding: 10vw 43.5vw;
+        top: 28vw;
+    }
+    .eye {
+        height: 3vw;
+        width: 3vw;
+    }
+    #prediction {
+        top: 32vw;
+    }
+}

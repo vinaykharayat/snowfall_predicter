@@ -5,13 +5,59 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/main.css') }}">
+
     <title>Snow Predictor</title>
 </head>
 
-<body>
+<body style="background-color:#f3c496">
+    <!-- Navigation Bar-->
+    <nav class="topnav">
+        <h1>Snowfall Predictor</h1>
+        <a id="about" data-bs-toggle="modal" data-bs-target="#aboutModal" class="glow-on-hover" type="button">About me</a>
+    </nav>
+
+    <!-- Modal -->
+    <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="aboutModalLabel">About me</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="about">
+                        After many years of meditation Babaji has achieved Superhuman state.<br> Unlike other fake babas, our bajaji just don't give 50-50 random guess.<br> By considering various factors like <strong>Max Temperature, Humidity, Wind direction, etc.,</strong>                        our babaji can predict snowfall. The probability of babji being correct is <strong>~82.3</strong> for now.
+                    </p>
+                    <p>For now babaji can only predict snowfall in Pithoragarh, Uttarakhand, India. But babaji told me that he will go to Mussorie soon and will predict snowfall there too.</p>
+                    <p>
+                        The prediction will update on <strong><span id="nextPredictionTime"></span></strong>.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <img id="babaji" src="{{ url_for('static',filename='images/babaji.png') }}">
+        <strong><span id="prediction"></span></strong>
+        <section id="move-area">
+            <div id='container'>
+                <div class='eye'></div>
+                <div class='eye'></div>
+            </div>
+        </section>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="{{url_for('static', filename='js/main.js')}}"></script>
+<script src="{{url_for('static', filename='js/movingEyes.js')}}"></script>
 
 </html>
