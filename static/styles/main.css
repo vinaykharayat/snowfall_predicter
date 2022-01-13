@@ -3,6 +3,15 @@
     padding: 0;
 }
 
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+}
+
 .topnav h1 {
     display: inline-block;
 }
@@ -76,50 +85,50 @@
 }
 
 #babaji {
-    height: 27vw;
+    width: 80%;
+    /* height: 20%; */
     margin-left: auto;
     margin-right: auto;
-    display: block;
+    position: relative;
+    /* top: 0;
+    left: 0; */
 }
 
 #prediction {
+    width: 100%;
     position: absolute;
-    top: 21.5vh;
-    padding-left: 49vw;
+    top: 22%;
+    left: 13%;
     font-size: 1.2vw;
-    margin: auto;
-}
-
-#move-area {
-    /*normally use body*/
-    width: 10vw;
-    height: 10vw;
-    padding: 10vw 41.2vw;
-    position: absolute;
-    top: 6.3vh;
-    margin: auto;
 }
 
 #container {
-    width: 100vw;
+    position: absolute;
+    width: 100%;
+    top: 30%;
+}
+
+.eye-container {
+    margin-right: 5.5%;
+    margin-top: 1%;
 }
 
 .eye {
     position: relative;
     display: inline-block;
     border-radius: 50%;
-    height: 1.8vw;
-    width: 1.8vw;
+    height: 2.2vw;
+    width: 2.2vw;
     background: #CCC;
 }
 
 .eye:after {
     /*pupil*/
     position: absolute;
-    bottom: 1.1vw;
-    right: 0.8vw;
-    width: 0.8vw;
-    height: 0.8vw;
+    bottom: 1vw;
+    right: 1.1vw;
+    width: 1vw;
+    height: 1vw;
     background: #000;
     border-radius: 50%;
     content: " ";
@@ -129,10 +138,13 @@
     #babaji {
         height: 55vw;
     }
-    .move-area {
+    #container {
         /*normally use body*/
-        padding: 10vw 44vw;
-        top: 27vw;
+        top: calc(50% - 50px);
+    }
+    .eye-container {
+        margin-right: 9vw;
+        margin-top: 1%;
     }
     .eye {
         height: 2.8vw;
@@ -140,20 +152,18 @@
     }
     .eye:after {
         /*pupil*/
-        bottom: 1.1vw;
-        right: 1.8vw;
-        width: 1.8vw;
-        height: 1.8vw;
+        width: 1.4vw;
+        height: 1.4vw;
     }
-    #prediction {
+    /* #prediction {
         top: 31vw;
         padding-left: 58vw;
         font-size: 2.2vw;
-    }
+    } */
 }
 
 @media only screen and (max-width: 390px) {
-    .move-area {
+    /* .move-area {
         padding: 10vw 43.5vw;
         top: 28vw;
     }
@@ -163,5 +173,5 @@
     }
     #prediction {
         top: 32vw;
-    }
+    } */
 }

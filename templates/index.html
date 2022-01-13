@@ -12,11 +12,28 @@
     <title>Snow Predictor</title>
 </head>
 
-<body style="background-color:#f3c496">
+<body style="background-color:#f3c496" id="move-area">
     <!-- Navigation Bar-->
-    <nav class="topnav">
+    <!-- <nav class="topnav">
         <h1>Snowfall Predictor</h1>
         <a id="about" data-bs-toggle="modal" data-bs-target="#aboutModal" class="glow-on-hover" type="button">About me</a>
+    </nav> -->
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Snowfall Predicter</a>
+            </div>
+            <!-- <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Page 1</a></li>
+            <li><a href="#">Page 2</a></li>
+          </ul> -->
+            <ul class="nav navbar-nav navbar-right">
+                <li><a id="about" data-bs-toggle="modal" data-bs-target="#aboutModal" class="glow-on-hover" type="button" href="#"><span class="glyphicon glyphicon-user"></span> About</a></li>
+                <!-- <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> -->
+            </ul>
+        </div>
     </nav>
 
     <!-- Modal -->
@@ -42,15 +59,21 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid">
-        <img id="babaji" src="{{ url_for('static',filename='images/babaji.png') }}">
-        <strong><span id="prediction"></span></strong>
-        <section id="move-area">
-            <div id='container'>
+    <div class="container position-relative">
+        <div class="row d-flex justify-content-center">
+            <div class="col col-sm-12 d-flex justify-content-center">
+                <img id="babaji" src="{{ url_for('static',filename='images/babaji.png') }}">
+            </div>
+        </div>
+        <div class="d-flex justify-content-center">
+            <strong><span class="d-flex justify-content-center" id="prediction">NO snowfall</span></strong>
+        </div>
+        <div class="d-flex justify-content-center" id='container'>
+            <div class="justify-content-center eye-container">
                 <div class='eye'></div>
                 <div class='eye'></div>
             </div>
-        </section>
+        </div>
     </div>
 
 
