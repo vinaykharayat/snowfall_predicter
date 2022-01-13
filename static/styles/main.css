@@ -86,12 +86,9 @@ body {
 
 #babaji {
     width: 80%;
-    /* height: 20%; */
     margin-left: auto;
     margin-right: auto;
     position: relative;
-    /* top: 0;
-    left: 0; */
 }
 
 #prediction {
@@ -155,23 +152,4 @@ body {
         width: 1.4vw;
         height: 1.4vw;
     }
-    /* #prediction {
-        top: 31vw;
-        padding-left: 58vw;
-        font-size: 2.2vw;
-    } */
-}
-
-@media only screen and (max-width: 390px) {
-    /* .move-area {
-        padding: 10vw 43.5vw;
-        top: 28vw;
-    }
-    .eye {
-        height: 3vw;
-        width: 3vw;
-    }
-    #prediction {
-        top: 32vw;
-    } */
 }
