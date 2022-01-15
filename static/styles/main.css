@@ -133,23 +133,28 @@ body {
 
 @media only screen and (max-width: 428px) {
     #babaji {
-        height: 55vw;
+        width: 120vw;
+        height: 100vw;
     }
     #container {
         /*normally use body*/
-        top: calc(50% - 50px);
+        top: calc(40% - 35px);
+    }
+    #prediction {
+        left: 20%;
+        font-size: 3.5vw;
     }
     .eye-container {
-        margin-right: 9vw;
+        margin-right: 11vw;
         margin-top: 1%;
     }
     .eye {
-        height: 2.8vw;
-        width: 2.8vw;
+        height: 4.2vw;
+        width: 4.2vw;
     }
     .eye:after {
         /*pupil*/
-        width: 1.4vw;
-        height: 1.4vw;
+        width: 2.7vw;
+        height: 2.7vw;
     }
 }
