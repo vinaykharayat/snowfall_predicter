@@ -46,8 +46,6 @@ function predict(postData) {
         url: url,
         contentType: "application/json; charset=utf-8",
         success: function(data) {
-
-
             let prediction = document.getElementById("prediction");
             if (data.prediction === 0) {
                 prediction.innerText = "No snowfall";
